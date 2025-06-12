@@ -7,7 +7,7 @@ Gerenciador Pessoal de Filmes Favoritos
 Este é um sistema web desenvolvido em PHP com conexão a banco de dados MySQL que permite aos usuários gerenciar sua coleção de filmes favoritos. As funcionalidades incluem:
 * **Cadastro e Autenticação de Usuários:** Usuários podem se registrar com login, senha e e-mail, e acessar o sistema com credenciais válidas. O acesso a áreas restritas é controlado por sessão.
 * **Gestão de Filmes (CRUD):** Após o login, o usuário pode adicionar novos filmes à sua lista pessoal, visualizar todos os filmes cadastrados, e também editar ou excluir filmes que ele mesmo registrou. Cada filme é associado ao usuário que o cadastrou.
-* **Validação e Segurança:** O sistema implementa validação de campos obrigatórios e utiliza prepared statements para todas as interações com o banco de dados , prevenindo SQL Injection. Senhas são armazenadas como hash.
+* **Validação e Segurança:** O sistema implementa validação de campos obrigatórios e utiliza prepared statements para todas as interações com o banco de dados, prevenindo SQL Injection. Senhas são armazenadas como hash.
 * **Estética:** A interface utiliza CSS externo para uma apresentação visual agradável e usabilidade.
 
 ## Usuário e Senha de Teste
