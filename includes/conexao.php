@@ -1,10 +1,10 @@
 <?php
 
 
-$host = "localhost"; 
+$host = "localhost:3307"; 
 $usuario_bd = "root"; 
 $senha_bd = "";     
-$nome_bd = "projetofilmes.php"; 
+$nome_bd = "bd_filmes"; 
 
 
 $conexao = new mysqli($host, $usuario_bd, $senha_bd, $nome_bd);

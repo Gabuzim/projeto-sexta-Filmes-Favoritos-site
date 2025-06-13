@@ -75,7 +75,7 @@ $conexao->close();
     <script>
         function confirmDelete(itemId) {
             if (confirm('Tem certeza que deseja excluir este item?')) {
-                window.location.href = 'excluir_item.php?id=' + itemId; // Você precisará criar este arquivo
+                window.location.href = 'excluir_item.php?id=' + itemId;
             }
         }
     </script>
