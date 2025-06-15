@@ -3,32 +3,50 @@
 ## Tema do Sistema
 Gerenciador Pessoal de Filmes Favoritos
 
-## Resumo do Funcionamento
-Este é um sistema web desenvolvido em PHP com conexão a banco de dados MySQL que permite aos usuários gerenciar sua coleção de filmes favoritos. As funcionalidades incluem:
-* **Cadastro e Autenticação de Usuários:** Usuários podem se registrar com login, senha e e-mail, e acessar o sistema com credenciais válidas. O acesso a áreas restritas é controlado por sessão.
-* **Gestão de Filmes (CRUD):** Após o login, o usuário pode adicionar novos filmes à sua lista pessoal, visualizar todos os filmes cadastrados, e também editar ou excluir filmes que ele mesmo registrou. Cada filme é associado ao usuário que o cadastrou.
-* **Validação e Segurança:** O sistema implementa validação de campos obrigatórios e utiliza prepared statements para todas as interações com o banco de dados, prevenindo SQL Injection. Senhas são armazenadas como hash.
-* **Estética:** A interface utiliza CSS externo para uma apresentação visual agradável e usabilidade.
+## Visão Geral do Projeto
+Este é um sistema web desenvolvido em PHP com MySQL que permite aos usuários criar e gerenciar sua própria coleção de filmes favoritos. O projeto demonstra funcionalidades essenciais de um aplicativo web, desde a autenticação de usuários até a manipulação de dados.
 
-## Usuário e Senha de Teste
-Para facilitar a avaliação, utilize as seguintes credenciais de teste (após a instalação e possível cadastro inicial):
+## Principais Funcionalidades
+* **Autenticação Completa:** Cadastro de novos usuários com validação de dados (incluindo verificação de login/e-mail existentes) e sistema de login seguro.
+* **Gerenciamento de Sessão:** Controle de acesso a áreas restritas do sistema, garantindo que apenas usuários autenticados possam interagir com seus dados.
+* **Gestão de Filmes (CRUD):**
+    * **Cadastro:** Adicione novos filmes com título e descrição (sinopse), associados automaticamente ao usuário logado.
+    * **Listagem:** Visualize todos os filmes cadastrados pelo usuário, exibidos em uma página dedicada.
+    * **Edição:** Altere as informações de filmes existentes, com validação de propriedade (o usuário só pode editar seus próprios filmes).
+    * **Exclusão:** Remova filmes da coleção pessoal do usuário.
+* **Segurança Robusta:** Utiliza `prepared statements` para todas as interações com o banco de dados (prevenindo SQL Injection) e `password_hash()` para o armazenamento seguro de senhas.
+* **Interface Amigável:** Design baseado em CSS externo para uma experiência de usuário clara e visualmente agradável.
 
-**Login:** Sr.cinéfilo
-**Senha:** 123456
+## Tecnologias Utilizadas
+* **Backend:** PHP (com extensão `mysqli` para banco de dados)
+* **Banco de Dados:** MySQL/MariaDB
+* **Frontend:** HTML5, CSS3
+* **Controle de Versão:** Git
+
+## Credenciais de Teste
+Para facilitar a avaliação, utilize as seguintes credenciais de teste (após a configuração e possível cadastro inicial via página de cadastro):
+
+* **Login:** Sr.cinéfilo
+* **Senha:** 123456
 
 ## Instruções de Instalação e Execução
 
-### 1. Configuração do Banco de Dados
-* Acesse seu gerenciador de banco de dados (ex: phpMyAdmin) e crie um novo banco de dados. Nome sugerido: `projeto_php`.
-* Importe o script `sql/criar_banco.sql` para este banco de dados. Este script criará as tabelas `usuarios` e `itens`.
-* Edite o arquivo `includes/conexao.php` para configurar as credenciais de acesso ao seu MySQL (`$host`, `$usuario_bd`, `$senha_bd`, `$nome_bd`).
+### 1. Pré-requisitos
+Certifique-se de ter um ambiente de desenvolvimento web configurado (como XAMPP, WAMP, MAMP ou LAMP) com:
+* Servidor web (Apache) em execução.
+* PHP (preferencialmente versão 7.x ou superior) em execução.
+* Servidor de banco de dados (MySQL/MariaDB) em execução.
 
-### 2. Configuração do Projeto
-* Copie a pasta `seuprojeto` inteira para o diretório de documentos do seu servidor web (ex: `htdocs` no XAMPP/WAMP, ou `/var/www/html` no Linux).
-* Certifique-se de que o servidor web (Apache) e o MySQL/MariaDB estejam em execução.
+### 2. Configuração do Banco de Dados
+* Acesse seu gerenciador de banco de dados (ex: phpMyAdmin via `http://localhost/phpmyadmin/`).
+* **Importe o script `sql/criar_banco.sql`** (localizado na pasta `sql/` do projeto). Este script irá criar o banco de dados **`projetofilmes.php`** (se ainda não existir) e gerar as tabelas `usuarios` e `itens` dentro dele.
+* Edite o arquivo `includes/conexao.php` para atualizar as credenciais de acesso ao seu MySQL (`$host`, `$usuario_bd`, `$senha_bd`, `$nome_bd`), garantindo que `$nome_bd` seja **`'projetofilmes.php'`** de acordo com sua configuração.
 
-### 3. Acesso ao Sistema
-* Abra seu navegador e acesse: `http://localhost/meuprojetosexta/`
+### 3. Configuração do Projeto
+* Copie a pasta completa do projeto (`projeto-sexta-Filmes-Favoritos-site`) para o diretório de documentos do seu servidor web (ex: `C:\xampp\htdocs\projeto-sexta-Filmes-Favoritos-site` ou `/var/www/html/projeto-sexta-Filmes-Favoritos-site`).
+
+### 4. Acesso ao Sistema
+* Abra seu navegador web e acesse o projeto pela URL: `http://localhost/projeto-sexta-Filmes-Favoritos-site/`
 
 ## Aluno
 - Gabryel Rocha
